@@ -15,25 +15,15 @@ class MainActivity_kt : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //Optional for full screen
-
-        //Optional for full screen
-        requestWindowFeature(Window.FEATURE_NO_TITLE)
-        window.setFlags(
-            FLAG_FULLSCREEN,
-            FLAG_FULLSCREEN
-        )
 
         //get a reference to the Activity Manager (AM)
         val activityManager = getSystemService(ACTIVITY_SERVICE) as ActivityManager
         //from the AM we get an object with our mobile device info
-        //from the AM we get an object with our mobile device info
         val configurationInfo = activityManager.deviceConfigurationInfo
 
         var supported = 1
-
-        if (configurationInfo.reqGlEsVersion >= 0x30000) supported =
-            3 else if (configurationInfo.reqGlEsVersion >= 0x20000) supported = 2
+        if (configurationInfo.reqGlEsVersion >= 0x30000) supported =  3
+        else if (configurationInfo.reqGlEsVersion >= 0x20000) supported = 2
 
         Log.v(
             "TAG", "Opengl ES supported >= " +
