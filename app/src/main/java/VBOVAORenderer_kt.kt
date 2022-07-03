@@ -20,7 +20,7 @@ class VBOVAORenderer_kt : BasicRenderer_kt() {
     private var shaderHandle = 0
     private var attrPos = 0
     private var attrColor = 0
-    private val USE_VAO = true
+    private val USE_VAO = false
 
     override fun onSurfaceCreated(gl10: GL10?, eglConfig: EGLConfig?) {
         super.onSurfaceCreated(gl10, eglConfig)
@@ -40,7 +40,10 @@ class VBOVAORenderer_kt : BasicRenderer_kt() {
             1f, -1f,
             0f, 1f
         )
-        val colors = floatArrayOf(1f, 0f, 0f, 0f, 1f, 0f, 0f, 0f, 1f)
+        val colors = floatArrayOf(
+            1f, 0f, 0f,
+            0f, 1f, 0f,
+            0f, 0f, 1f)
         val vertexData = ByteBuffer.allocateDirect(vertices.size * java.lang.Float.BYTES).order(
             ByteOrder.nativeOrder()
         )
@@ -61,6 +64,7 @@ class VBOVAORenderer_kt : BasicRenderer_kt() {
             VAO = IntArray(1)
             GLES30.glGenVertexArrays(1, VAO, 0)
             GLES30.glBindVertexArray(VAO[0])
+
             GLES20.glBindBuffer(GLES20.GL_ARRAY_BUFFER, VBO[0])
             GLES20.glBufferData(
                 GLES20.GL_ARRAY_BUFFER, java.lang.Float.BYTES * vertexData.capacity(),
@@ -68,6 +72,7 @@ class VBOVAORenderer_kt : BasicRenderer_kt() {
             )
             GLES20.glVertexAttribPointer(attrPos, 2, GLES20.GL_FLOAT, false, 0, 0)
             GLES20.glEnableVertexAttribArray(attrPos)
+
             GLES20.glBindBuffer(GLES20.GL_ARRAY_BUFFER, VBO[1])
             GLES20.glBufferData(
                 GLES20.GL_ARRAY_BUFFER, java.lang.Float.BYTES * colorData.capacity(),
@@ -114,6 +119,5 @@ class VBOVAORenderer_kt : BasicRenderer_kt() {
             GLES20.glUseProgram(0)
         }
     }
-
 
 }

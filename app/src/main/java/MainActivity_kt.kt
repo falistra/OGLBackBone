@@ -43,7 +43,7 @@ class MainActivity_kt : Activity() {
         //val renderer: GLSurfaceView.Renderer = ScissorRenderer_kt()
 
         //GLSurfaceView.Renderer renderer = new VBOVAORenderer();
-        val renderer: GLSurfaceView.Renderer = VBOVAORenderer_kt()
+        //val renderer: GLSurfaceView.Renderer = VBOVAORenderer_kt()
 
         //GLSurfaceView.Renderer renderer = new MultiInterleavedRenderer();
         //val renderer: GLSurfaceView.Renderer = MultiInterleavedRenderer_kt()
@@ -60,15 +60,14 @@ class MainActivity_kt : Activity() {
         //GLSurfaceView.Renderer renderer = new ModelViewer();
         //val renderer: GLSurfaceView.Renderer = ModelViewer_kt()
 
-
         //GLSurfaceView.Renderer renderer = new TextFilterRenderer();
         //val renderer: GLSurfaceView.Renderer = TextFilterRenderer_kt()
 
         //GLSurfaceView.Renderer renderer = new TexTeapot();
-        //val renderer: GLSurfaceView.Renderer = TexTeapot_kt()
+        // val renderer: GLSurfaceView.Renderer = TexTeapot_kt()
 
         //GLSurfaceView.Renderer renderer = new MultiTexPlane();
-        // val renderer: GLSurfaceView.Renderer = MultiTexPlane_kt()
+        val renderer: GLSurfaceView.Renderer = MultiTexPlane_kt()
 
         //GLSurfaceView.Renderer renderer = new TeapotDisplaced();
         //val renderer: GLSurfaceView.Renderer = TeapotDisplaced_kt()

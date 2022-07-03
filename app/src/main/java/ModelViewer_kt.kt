@@ -164,7 +164,7 @@ class ModelViewer_kt : BasicRenderer_kt() {
         Matrix.multiplyMM(temp, 0, projM, 0, viewM, 0)
         Matrix.setIdentityM(modelM, 0)
         Matrix.translateM(modelM, 0, 0f, 0f, 7f)
-        Matrix.rotateM(modelM, 0, angle, 1f, 0f, 0f)
+        Matrix.rotateM(modelM, 0, angle, 1f, 1f, 1f)
         Matrix.multiplyMM(MVP, 0, temp, 0, modelM, 0)
         GLES20.glUseProgram(shaderHandle)
         GLES30.glBindVertexArray(VAO[0])

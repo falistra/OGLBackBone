@@ -11,6 +11,8 @@ import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
+import kotlin.random.Random
+
 
 class MatTransfRenderer_kt : BasicRenderer_kt() {
     private lateinit var VAO: IntArray
@@ -57,6 +59,7 @@ class MatTransfRenderer_kt : BasicRenderer_kt() {
 
     override fun onSurfaceCreated(gl10: GL10?, eglConfig: EGLConfig?) {
         super.onSurfaceCreated(gl10, eglConfig)
+
         val vertexSrc = """
              #version 300 es
              
@@ -152,10 +155,10 @@ class MatTransfRenderer_kt : BasicRenderer_kt() {
             if (culling) GLES20.glEnable(GLES20.GL_CULL_FACE) else GLES20.glDisable(GLES20.GL_CULL_FACE)
             cullingChanged = false
         }
-        angle += 1f
+        angle += 1f // + Random.nextFloat()
         Matrix.setIdentityM(modelM, 0)
         Matrix.translateM(modelM, 0, 0f, 0f, -1f)
-        Matrix.rotateM(modelM, 0, angle, 0f, 1f, 0f)
+        Matrix.rotateM(modelM, 0, angle, 1f, 1f, 1f)
         Matrix.scaleM(modelM, 0, 0.5f, 1f, 0.5f)
         Matrix.multiplyMM(temp, 0, projM, 0, viewM, 0)
         Matrix.multiplyMM(MVP, 0, temp, 0, modelM, 0)

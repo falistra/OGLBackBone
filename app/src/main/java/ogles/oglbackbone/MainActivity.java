@@ -50,14 +50,14 @@ public class MainActivity extends Activity {
         //GLSurfaceView.Renderer renderer = new ScissorRenderer();
         //GLSurfaceView.Renderer renderer = new VBOVAORenderer();
         //GLSurfaceView.Renderer renderer = new MultiInterleavedRenderer();
-        GLSurfaceView.Renderer renderer = new IndexedRenderer();
+        //GLSurfaceView.Renderer renderer = new IndexedRenderer();
         //GLSurfaceView.Renderer renderer = new MatTransfRenderer();
         //GLSurfaceView.Renderer renderer = new PersOrthoRenderer();
         //GLSurfaceView.Renderer renderer = new DepthTestRenderer();
         //GLSurfaceView.Renderer renderer = new ModelViewer();
         //GLSurfaceView.Renderer renderer = new TextFilterRenderer();
         //GLSurfaceView.Renderer renderer = new TexTeapot();
-        //GLSurfaceView.Renderer renderer = new MultiTexPlane();
+        GLSurfaceView.Renderer renderer = new MultiTexPlane();
         //GLSurfaceView.Renderer renderer = new TeapotDisplaced();
         //GLSurfaceView.Renderer renderer = new TeapotLight();
         //GLSurfaceView.Renderer renderer = new TexAndLightRenderer();

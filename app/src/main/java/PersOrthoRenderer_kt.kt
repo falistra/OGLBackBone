@@ -162,8 +162,8 @@ class PersOrthoRenderer_kt : BasicRenderer_kt() {
         )
         angle += 1f
         Matrix.setIdentityM(modelM, 0)
-        Matrix.translateM(modelM, 0, -0.5f, 0f, -4f)
-        Matrix.rotateM(modelM, 0, angle, 0f, 1f, 0f)
+        Matrix.translateM(modelM, 0, -0.8f, 0f, -3f)
+        Matrix.rotateM(modelM, 0, angle, 0f, 1f, 1f)
         Matrix.scaleM(modelM, 0, 0.5f, 1f, 0.5f)
         Matrix.multiplyMM(MVP, 0, temp, 0, modelM, 0)
         GLES20.glUseProgram(shaderHandle)
@@ -176,8 +176,8 @@ class PersOrthoRenderer_kt : BasicRenderer_kt() {
             0
         ) //num of faces, not vertices!
         Matrix.setIdentityM(modelM, 0)
-        Matrix.translateM(modelM, 0, 0.5f, 0f, -3f)
-        Matrix.rotateM(modelM, 0, angle, 0f, -1f, 0f)
+        Matrix.translateM(modelM, 0, 0.8f, 0f, -3f)
+        Matrix.rotateM(modelM, 0, angle, 0f, 1f, 1f)
         Matrix.scaleM(modelM, 0, 0.5f, 1f, 0.5f)
         Matrix.multiplyMM(MVP, 0, temp, 0, modelM, 0)
         GLES20.glUniformMatrix4fv(MVPloc, 1, false, MVP, 0)
