@@ -57,11 +57,11 @@ public class MainActivity extends Activity {
         //GLSurfaceView.Renderer renderer = new ModelViewer();
         //GLSurfaceView.Renderer renderer = new TextFilterRenderer();
         //GLSurfaceView.Renderer renderer = new TexTeapot();
-        GLSurfaceView.Renderer renderer = new MultiTexPlane();
+        //GLSurfaceView.Renderer renderer = new MultiTexPlane();
         //GLSurfaceView.Renderer renderer = new TeapotDisplaced();
         //GLSurfaceView.Renderer renderer = new TeapotLight();
         //GLSurfaceView.Renderer renderer = new TexAndLightRenderer();
-        //GLSurfaceView.Renderer renderer = new ToonShadingRenderer();
+        GLSurfaceView.Renderer renderer = new ToonShadingRenderer();
         //GLSurfaceView.Renderer renderer = new PostProcessLuminance();
         //GLSurfaceView.Renderer renderer = new ComputeShaderExample();
         //GLSurfaceView.Renderer renderer = new ComputeShaderNN();

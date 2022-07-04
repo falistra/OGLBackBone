@@ -66,7 +66,8 @@ class ToonShadingRenderer_kt : BasicRenderer_kt(1f,1f,1f,1f)  {
         super.onSurfaceCreated(gl10, eglConfig)
         val vertexSrc = """
              #version 300 es
-             
+             precision highp int;
+
              layout(location = 1) in vec3 vPos;
              layout(location = 2) in vec3 normal;
              uniform mat4 MVP;
@@ -90,6 +91,8 @@ class ToonShadingRenderer_kt : BasicRenderer_kt(1f,1f,1f,1f)  {
              #version 300 es
              
              precision mediump float;
+             precision highp int;
+
              
              uniform vec3 lightPos;
              uniform int drawContour;
@@ -99,7 +102,7 @@ class ToonShadingRenderer_kt : BasicRenderer_kt(1f,1f,1f,1f)  {
              
              void main() {
              if(drawContour==1){
-             fragColor=vec4(0,0,0,1);
+             fragColor=vec4(0.5,0.5,0.5,1);
              return;
              }
              vec3 lightDir = normalize(lightPos-fragModel);
@@ -108,6 +111,7 @@ class ToonShadingRenderer_kt : BasicRenderer_kt(1f,1f,1f,1f)  {
              else if (diff>0.5) fragColor = vec4(0.425,0.474,0.125,1);
              else if (diff>0.25) fragColor = vec4(0.2,0.2,0.075,1);
              else fragColor = vec4(0.1,0.1,0,1);
+             
              }
              """.trimIndent()
         shaderHandle = ShaderCompiler.createProgram(vertexSrc, fragmentSrc)

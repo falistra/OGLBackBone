@@ -94,7 +94,7 @@ class ModelViewer_kt : BasicRenderer_kt() {
         var vertices: FloatArray? = null
         var indices: IntArray? = null
         try {
-            `is` = context!!.assets.open("ohioteapot.ply")
+            `is` = context!!.assets.open("ohioteapot.ply") // ohioteapot
             val po = PlyObject(`is`)
             po.parse()
             //Log.v("TAG",po.toString());

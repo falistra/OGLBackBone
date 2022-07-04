@@ -67,7 +67,7 @@ class MainActivity_kt : Activity() {
         // val renderer: GLSurfaceView.Renderer = TexTeapot_kt()
 
         //GLSurfaceView.Renderer renderer = new MultiTexPlane();
-        val renderer: GLSurfaceView.Renderer = MultiTexPlane_kt()
+        //val renderer: GLSurfaceView.Renderer = MultiTexPlane_kt()
 
         //GLSurfaceView.Renderer renderer = new TeapotDisplaced();
         //val renderer: GLSurfaceView.Renderer = TeapotDisplaced_kt()
@@ -76,13 +76,13 @@ class MainActivity_kt : Activity() {
         //val renderer: GLSurfaceView.Renderer = TeapotLight_kt()
 
         //GLSurfaceView.Renderer renderer = new TexAndLightRenderer();
-        //** val renderer: GLSurfaceView.Renderer = TexAndLightRenderer_kt()
+        //val renderer: GLSurfaceView.Renderer = TexAndLightRenderer_kt()
 
         //GLSurfaceView.Renderer renderer = new ToonShadingRenderer();
-        //** val renderer: GLSurfaceView.Renderer = ToonShadingRenderer_kt()
+        val renderer: GLSurfaceView.Renderer = ToonShadingRenderer_kt()
 
         //GLSurfaceView.Renderer renderer = new PostProcessLuminance();
-        //** val renderer: GLSurfaceView.Renderer = PostProcessLuminance_kt()
+        //val renderer: GLSurfaceView.Renderer = PostProcessLuminance_kt()
 
         //GLSurfaceView.Renderer renderer = new ComputeShaderExample();
         //** val renderer: GLSurfaceView.Renderer = ComputeShaderExample_kt()

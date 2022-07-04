@@ -437,7 +437,7 @@ public class MultiTexPlane extends BasicRenderer {
         Matrix.setIdentityM(modelM,0);
         Matrix.translateM(modelM,0,0,-1,0);
         //Matrix.rotateM(modelM,0,90,1,0,0);
-        Matrix.scaleM(modelM,0,20,1,20);
+        Matrix.scaleM(modelM,0,5,1,5);
         Matrix.multiplyMM(MVP, 0, temp, 0, modelM, 0);
 
         glActiveTexture(GL_TEXTURE0);

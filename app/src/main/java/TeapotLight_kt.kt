@@ -14,7 +14,7 @@ import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
 
 class TeapotLight_kt : BasicRenderer_kt() {
-    // val PHONG_MODEL = true
+    val PHONG_MODEL = false
 
     private lateinit var VAO: IntArray
     private var shaderHandle = 0
@@ -139,7 +139,7 @@ class TeapotLight_kt : BasicRenderer_kt() {
              fragColor = ambientComponent + diff*diffuseComponent + spec*specComponent; 
              }
              """.trimIndent()
-        shaderHandle = if (TeapotLight.PHONG_MODEL) ShaderCompiler.createProgram(
+        shaderHandle = if (PHONG_MODEL) ShaderCompiler.createProgram(
             vertexSrcPhong,
             fragmentSrcPhong
         ) else ShaderCompiler.createProgram(vertexSrcGouraud, fragmentSrcGouraud)

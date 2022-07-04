@@ -131,8 +131,6 @@ class MultiTexPlane_kt : BasicRenderer_kt() {
         shaderHandleSky = ShaderCompiler.createProgram(vertexSrc, fragmentSrcSky)
 
         //mapping vertices to s,t texture coordinates
-
-        //mapping vertices to s,t texture coordinates
         val vertices = floatArrayOf(
             -1f,
             0f,

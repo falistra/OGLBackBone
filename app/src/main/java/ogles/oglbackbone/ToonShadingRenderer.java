@@ -162,7 +162,7 @@ public class ToonShadingRenderer extends BasicRenderer {
                 "\n" +
                 "void main() {\n" +
                 "if(drawContour==1){\n"+
-                "fragColor=vec4(0,0,0,1);\n" +
+                "fragColor=vec4(0.5,0.5,0.5,1);\n" +
                 "return;\n"+
                 "}\n"+
                 "vec3 lightDir = normalize(lightPos-fragModel);\n"+
