@@ -40,7 +40,9 @@ open class BasicRenderer_kt(r: Float = 0f, g: Float = 0f, b: Float = 0f, a: Floa
     }
 
     override fun onSurfaceChanged(gl10: GL10?, w: Int, h: Int) {
+        /*
         GLES20.glViewport(0, 0, w, h)
+        */
         currentScreen!!.x = w
         currentScreen!!.y = h
     }

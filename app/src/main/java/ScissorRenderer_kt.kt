@@ -4,7 +4,6 @@ import android.app.Activity
 import android.opengl.GLES20
 import android.util.Log
 import android.view.Gravity
-import android.view.View.OnTouchListener
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
@@ -13,16 +12,13 @@ import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
 
 class ScissorRenderer_kt : BasicRenderer_kt() {
-    private var rnd: Random? = null
-    lateinit private var color: FloatArray
+    private var rnd: Random = Random()
+    private lateinit var color: FloatArray
 
-    init {
-        rnd = Random()
-    }
 
     override fun onSurfaceCreated(gl10: GL10?, eglConfig: EGLConfig?) {
         super.onSurfaceCreated(gl10, eglConfig)
-        color = floatArrayOf(rnd!!.nextFloat(), rnd!!.nextFloat(), rnd!!.nextFloat(), 1f)
+        color = floatArrayOf(rnd.nextFloat(), rnd.nextFloat(), rnd.nextFloat(), 1f)
         GLES20.glEnable(GLES20.GL_SCISSOR_TEST)
         Log.v(BasicRenderer.TAG, "Scissor test enabled")
         val androidActivityContext = this.getContextBasic() as Activity
@@ -37,11 +33,14 @@ class ScissorRenderer_kt : BasicRenderer_kt() {
             textView.text = "Ready for input..."
         }
         this.getSurfaceBasic()!!
-            .setOnTouchListener(OnTouchListener { view, motionEvent -> //Log.v(TAG,"Touch event runs in " + Thread.currentThread().getName());
+            .setOnTouchListener { view, _ ->
+                view.performClick()
+                //Log.v(TAG,"Touch event runs in " + Thread.currentThread().getName());
                 textView.text = "Touch event runs in " + Thread.currentThread().name
-                color = floatArrayOf(rnd!!.nextFloat(), rnd!!.nextFloat(), rnd!!.nextFloat(), 1f)
+                color = floatArrayOf(rnd.nextFloat(), rnd.nextFloat(), rnd.nextFloat(), 1f)
                 false
-            })
+            }
+
     }
 
     override fun onDrawFrame(gl10: GL10?) {

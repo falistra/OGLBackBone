@@ -40,10 +40,10 @@ class MainActivity_kt : Activity() {
         //val renderer: GLSurfaceView.Renderer = BasicRenderer_kt(0.45f,0.32f,0.13f);
 
         //GLSurfaceView.Renderer renderer = new ScissorRenderer();
-        //val renderer: GLSurfaceView.Renderer = ScissorRenderer_kt()
+        // val renderer: GLSurfaceView.Renderer = ScissorRenderer_kt()
 
         //GLSurfaceView.Renderer renderer = new VBOVAORenderer();
-        //val renderer: GLSurfaceView.Renderer = VBOVAORenderer_kt()
+        val renderer: GLSurfaceView.Renderer = VBOVAORenderer_kt()
 
         //GLSurfaceView.Renderer renderer = new MultiInterleavedRenderer();
         //val renderer: GLSurfaceView.Renderer = MultiInterleavedRenderer_kt()
@@ -79,7 +79,7 @@ class MainActivity_kt : Activity() {
         //val renderer: GLSurfaceView.Renderer = TexAndLightRenderer_kt()
 
         //GLSurfaceView.Renderer renderer = new ToonShadingRenderer();
-        val renderer: GLSurfaceView.Renderer = ToonShadingRenderer_kt()
+        //val renderer: GLSurfaceView.Renderer = ToonShadingRenderer_kt()
 
         //GLSurfaceView.Renderer renderer = new PostProcessLuminance();
         //val renderer: GLSurfaceView.Renderer = PostProcessLuminance_kt()

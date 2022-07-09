@@ -24,8 +24,8 @@ class VBOVAORenderer_kt : BasicRenderer_kt() {
 
     override fun onSurfaceCreated(gl10: GL10?, eglConfig: EGLConfig?) {
         super.onSurfaceCreated(gl10, eglConfig)
-        var isV: InputStream? = null
-        var isF: InputStream? = null
+        val isV: InputStream
+        val isF: InputStream
         try {
             isV = context!!.assets.open("passthrough.glslv")
             isF = context!!.assets.open("passthrough.glslf")
@@ -34,7 +34,10 @@ class VBOVAORenderer_kt : BasicRenderer_kt() {
             e.printStackTrace()
             exitProcess(-1)
         }
-        if (shaderHandle == -1) System.exit(-1)
+        if (shaderHandle == -1) exitProcess(-1)
+
+
+
         val vertices = floatArrayOf(
             -1f, -1f,
             1f, -1f,
@@ -55,8 +58,10 @@ class VBOVAORenderer_kt : BasicRenderer_kt() {
             .asFloatBuffer()
         colorData.put(colors)
         colorData.position(0)
+
         attrPos = GLES20.glGetAttribLocation(shaderHandle, "vPos")
         attrColor = GLES20.glGetAttribLocation(shaderHandle, "aColor")
+
         VBO = IntArray(2)
         GLES20.glGenBuffers(2, VBO, 0)
         if (USE_VAO) {
