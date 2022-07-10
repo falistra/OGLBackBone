@@ -17,11 +17,11 @@ class ModelViewer_kt : BasicRenderer_kt() {
     private var shaderHandle = 0
     private var MVPloc = 0
 
-    private val viewM: FloatArray
-    private val modelM: FloatArray
-    private val projM: FloatArray
-    private val MVP: FloatArray
-    private val temp: FloatArray
+    private val viewM: FloatArray = FloatArray(16)
+    private val modelM: FloatArray = FloatArray(16)
+    private val projM: FloatArray  = FloatArray(16)
+    private val MVP: FloatArray  = FloatArray(16)
+    private val temp: FloatArray  = FloatArray(16)
 
     private var drawMode = 0
     private var countFacesToElement = 0
@@ -29,13 +29,7 @@ class ModelViewer_kt : BasicRenderer_kt() {
 
     init {
 
-        //super(1,1,1);
         drawMode = GLES20.GL_TRIANGLES
-        viewM = FloatArray(16)
-        modelM = FloatArray(16)
-        projM = FloatArray(16)
-        MVP = FloatArray(16)
-        temp = FloatArray(16)
         Matrix.setIdentityM(viewM, 0)
         Matrix.setIdentityM(modelM, 0)
         Matrix.setIdentityM(projM, 0)

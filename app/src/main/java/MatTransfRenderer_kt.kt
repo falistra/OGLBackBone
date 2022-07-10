@@ -11,18 +11,16 @@ import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
-import kotlin.random.Random
-
 
 class MatTransfRenderer_kt : BasicRenderer_kt() {
     private lateinit var VAO: IntArray
     private var shaderHandle = 0
     private var MVPloc = 0
-    private var viewM: FloatArray
-    private var modelM: FloatArray
-    private var projM: FloatArray
-    private var MVP: FloatArray
-    private var temp: FloatArray
+    private var viewM: FloatArray =  FloatArray(16)
+    private var modelM: FloatArray =  FloatArray(16)
+    private var projM: FloatArray =  FloatArray(16)
+    private var MVP: FloatArray =  FloatArray(16)
+    private var temp: FloatArray =  FloatArray(16)
     private var angle = 0f
     private var cullingChanged = false
     private var culling = false
@@ -30,11 +28,6 @@ class MatTransfRenderer_kt : BasicRenderer_kt() {
     init {
         culling = false
         cullingChanged = false
-        viewM = FloatArray(16)
-        modelM = FloatArray(16)
-        projM = FloatArray(16)
-        MVP = FloatArray(16)
-        temp = FloatArray(16)
         Matrix.setIdentityM(viewM, 0)
         Matrix.setIdentityM(modelM, 0)
         Matrix.setIdentityM(projM, 0)

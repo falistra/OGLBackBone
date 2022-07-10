@@ -1,12 +1,10 @@
 package ogles.oglbackbone
 
+import android.app.Activity
 import android.app.ActivityManager
 import android.opengl.GLSurfaceView
 import android.os.Bundle
 import android.util.Log
-import android.view.Window
-import android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN
-import android.app.Activity
 
 class MainActivity_kt : Activity() {
 
@@ -43,13 +41,13 @@ class MainActivity_kt : Activity() {
         // val renderer: GLSurfaceView.Renderer = ScissorRenderer_kt()
 
         //GLSurfaceView.Renderer renderer = new VBOVAORenderer();
-        val renderer: GLSurfaceView.Renderer = VBOVAORenderer_kt()
+        //val renderer: GLSurfaceView.Renderer = VBOVAORenderer_kt()
 
         //GLSurfaceView.Renderer renderer = new MultiInterleavedRenderer();
         //val renderer: GLSurfaceView.Renderer = MultiInterleavedRenderer_kt()
 
         //GLSurfaceView.Renderer renderer = new IndexedRenderer();
-        //val renderer: GLSurfaceView.Renderer = IndexedRenderer_kt()
+        // val renderer: GLSurfaceView.Renderer = IndexedRenderer_kt()
 
         //GLSurfaceView.Renderer renderer = new MatTransfRenderer();
         //val renderer: GLSurfaceView.Renderer = MatTransfRenderer_kt()
@@ -58,7 +56,7 @@ class MainActivity_kt : Activity() {
         //val renderer: GLSurfaceView.Renderer = PersOrthoRenderer_kt()
 
         //GLSurfaceView.Renderer renderer = new ModelViewer();
-        //val renderer: GLSurfaceView.Renderer = ModelViewer_kt()
+        val renderer: GLSurfaceView.Renderer = ModelViewer_kt()
 
         //GLSurfaceView.Renderer renderer = new TextFilterRenderer();
         //val renderer: GLSurfaceView.Renderer = TextFilterRenderer_kt()
